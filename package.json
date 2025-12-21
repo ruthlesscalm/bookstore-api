@@ -1,0 +1,27 @@
+{
+  "name": "bookstore-api",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "Book",
+    "Store"
+  ],
+  "homepage": "https://github.com/ruthlesscalm/bookstore-api#readme",
+  "bugs": {
+    "url": "https://github.com/ruthlesscalm/bookstore-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruthlesscalm/bookstore-api.git"
+  },
+  "license": "ISC",
+  "author": "Ruthless Calm",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
