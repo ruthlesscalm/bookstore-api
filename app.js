@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const app = express();
 const PORT = 3000;
+const hostname = `0.0.0.0`;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -13,6 +14,6 @@ app.get("/", (req,res) => {
     res.sendFile(path.join(__dirname, "views" , "index.html"));
 })
 
-app.listen(PORT , () => {
+app.listen(PORT , hostname ,  () => {
     console.log(`Server running on ${PORT}`);
 })

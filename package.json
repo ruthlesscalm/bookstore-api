@@ -22,7 +22,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
     "tailwind": "npx @tailwindcss/cli -i ./src/tailwind.css -o ./public/css/style.css --watch",
-    "sync": "browser-sync start --proxy http://localhost:3000 --files \"**/*.css, **/*.js, **/*.html\""
+    "sync": "browser-sync start --proxy \"http://localhost:3000\" --files \"public/css/**/*.css, public/js/**/*.js, views/**/*.html\" --no-open --inject-changes --no-notify"
   },
   "dependencies": {
     "express": "^5.2.1"
