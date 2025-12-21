@@ -20,6 +20,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon",
     "tailwind": "npx @tailwindcss/cli -i ./src/tailwind.css -o ./public/css/style.css --watch"
   },
   "dependencies": {
