@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store - Upload Books</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen text-white flex flex-col m-0">
+    <header
+        class="bg-slate-800 border-b-2 border-slate-700 flex justify-between items-center px-[clamp(20px,3vw,50px)] py-[clamp(8px,0.625vw,15px)]">
+
+        <div class="flex">
+            <h1 class="text-[clamp(1.25rem,1.25rem+1vw,3.5rem)] font-semibold text-orange-500">Book Store</h1>
+        </div>
+
+        <form action="/search" method="get" class="flex items-center relative max-lg:hidden">
+            <label for="search" class="sr-only">Search for books</label>
+            <input type="text" name="search" id="search" placeholder="What do you want to Read?"
+                class="border-2 border-slate-600 pl-[4.2%] pr-[12.5%] py-[2.25%] w-[clamp(280px,25vw,900px)] rounded-full bg-slate-700 text-[clamp(0.9375rem,0.5rem+0.625vw,2rem)] outline-0 focus-visible:outline-2 focus-visible:outline-orange-500">
+            <button type="submit"
+                class="absolute top-[50%] -translate-y-[50%] right-[calc(3.125vw/2-1.25vw/4)] max-lg:right-3.25">
+                <img src="/assets/images/search.svg" alt="" aria-hidden="true" class="h-[clamp(16px,1.25vw,28px)]">
+            </button>
+        </form>
+
+        <nav class="max-lg:hidden">
+            <ul class="flex gap-8 items-center">
+                <li><a href="/" class="text-[clamp(0.875rem,0.9375rem+0.3vw,1.5rem)] hover:text-orange-500">Home</a>
+                </li>
+                <li><a href="/about"
+                        class="text-[clamp(0.875rem,0.9375rem+0.3vw,1.5rem)] hover:text-orange-500">About</a></li>
+                <li><a href="/upload"
+                        class="text-[clamp(0.875rem,0.9375rem+0.3vw,1.5rem)] hover:text-orange-500">Upload</a></li>
+                <li><button
+                        class="loginBtn text-[clamp(0.875rem,0.9375rem+0.3vw,1.5rem)] bg-orange-600 hover:bg-orange-700 px-[0.964em] py-[0.4em] font-medium rounded-sm cursor-pointer">Login</button>
+                </li>
+            </ul>
+        </nav>
+        <div class="lg:hidden cursor-pointer" id="openBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+        </div>
+    </header>
+
+    <div id="mobileMenu" class="fixed inset-0 z-50 hidden bg-slate-900/80 backdrop-blur-sm">
+        <div class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-slate-800 p-6">
+
+            <button id="closeBtn" class="mb-6 text-2xl cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5" stroke-linecap="round" class="h-6 w-6" aria-hidden="true">
+                    <line x1="5" y1="5" x2="19" y2="19" />
+                    <line x1="19" y1="5" x2="5" y2="19" />
+                </svg>
+
+            </button>
+
+            <form action="/search" method="get" class="mb-8">
+                <label for="search" class="sr-only">Search for books</label>
+                <input type="text" id="search" placeholder="Search books…"
+                    class="w-full px-4 py-3 rounded-lg bg-slate-700 outline-none focus:ring-2 focus:ring-orange-500" />
+            </form>
+
+            <nav>
+                <ul class="flex flex-col gap-6 text-lg">
+                    <li><a href="/" class="text-[clamp(0.875rem,0.9375rem+0.3vw,1.5rem)] hover:text-orange-500">Home</a>
+                    </li>
+                    <li><a href="/about"
+                            class="text-[clamp(0.875rem,0.9375rem+0.3vw,1.5rem)] hover:text-orange-500">About</a></li>
+                    <li><a href="/upload"
+                            class="text-[clamp(0.875rem,0.9375rem+0.3vw,1.5rem)] hover:text-orange-500">Upload</a></li>
+                    <li>
+                        <button
+                            class="loginBtn w-full text-[clamp(0.875rem,0.9375rem+0.5vw,1.5rem)] bg-orange-600 hover:bg-orange-700 px-[0.964em] py-[0.4em] font-medium rounded-md cursor-pointer">
+                            Login
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+    <main class="grow">
+
+        <section class="max-w-7xl mx-auto px-4 py-12 text-center max-[500px]:w-[90%]">
+            <h2
+                class="text-[clamp(1.5rem,1.25rem+1.5vw,4rem)] text-center font-bold mb-4 bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+                Upload a New Book
+            </h2>
+            <p class="text-[clamp(1rem,1rem+0.4vw,1.75rem)] text-center text-slate-400 mb-8">
+                Share your book with thousands of readers
+            </p>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <form action="/upload" method="POST" enctype="multipart/form-data"
+                class="bg-slate-800 rounded-lg p-8 shadow-2xl border border-slate-700">
+
+                <div class="mb-6">
+                    <label for="title" class="block text-white font-semibold mb-2">Book Title *</label>
+                    <input type="text" id="title" name="title" required
+                        class="w-full px-4 py-3 bg-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 border border-slate-600 hover:border-slate-500 transition-colors"
+                        placeholder="Enter the book title" />
+                </div>
+
+                <div class="mb-6">
+                    <label for="author" class="block text-white font-semibold mb-2">Author *</label>
+                    <input type="text" id="author" name="author" required
+                        class="w-full px-4 py-3 bg-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 border border-slate-600 hover:border-slate-500 transition-colors"
+                        placeholder="Enter the author name" />
+                </div>
+
+                <div class="mb-6">
+                    <label for="description" class="block text-white font-semibold mb-2">Description *</label>
+                    <textarea id="description" name="description" required rows="4"
+                        class="w-full px-4 py-3 bg-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 border border-slate-600 hover:border-slate-500 transition-colors resize-none"
+                        placeholder="Enter a brief description of the book"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="price" class="block text-white font-semibold mb-2">Price ($) *</label>
+                        <input type="number" id="price" name="price" required min="0" step="0.01"
+                            class="w-full px-4 py-3 bg-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 border border-slate-600 hover:border-slate-500 transition-colors"
+                            placeholder="0.00" />
+                    </div>
+
+                    <div>
+                        <label for="rating" class="block text-white font-semibold mb-2">Rating (1-10) *</label>
+                        <input type="number" id="rating" name="rating" required min="1" max="10" step="0.1"
+                            class="w-full px-4 py-3 bg-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 border border-slate-600 hover:border-slate-500 transition-colors"
+                            placeholder="1 - 10" />
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="genre" class="block text-white font-semibold mb-2">Genre</label>
+                    <select id="genre" name="genre"
+                        class="w-full px-4 py-3 bg-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 border border-slate-600 hover:border-slate-500 transition-colors cursor-pointer">
+                        <option value="">Select a genre</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="non-fiction">Non-Fiction</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="romance">Romance</option>
+                        <option value="sci-fi">Science Fiction</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="thriller">Thriller</option>
+                        <option value="biography">Biography</option>
+                        <option value="self-help">Self-Help</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="flex gap-4 justify-end">
+                    <button type="reset"
+                        class="px-8 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold transition-colors cursor-pointer border border-slate-600">
+                        Reset
+                    </button>
+                    <button type="submit"
+                        class="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-semibold transition-colors cursor-pointer shadow-lg hover:shadow-orange-500/50">
+                        Upload Book
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-700 mt-16 py-8 text-center text-slate-500">
+        <p>&copy; 2025 BookStore. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/header.js"></script>
+</body>
+
+</html>
