@@ -5,11 +5,15 @@ import { __rootDir } from '../app.js';
 const router = express.Router();
 
 router.get("/", (req,res) => {
+    res.sendFile(path.join(__rootDir, "views" , "index.html"));
+});
+
+router.get("/about", (req,res) => {
+    res.sendFile(path.join(__rootDir, "views" , "about.html"));
+});
+
+router.get("/upload", (req,res) => {
     res.sendFile(path.join(__rootDir, "views" , "upload.html"));
-})
-router.post("/", (req,res) => {
-    console.log(`Request data: `, req.body);
-    res.redirect("/");
-})
+});
 
 export default router;
