@@ -24,31 +24,7 @@
 			</p>
 		</section>
 
-		<section class="relative max-w-7xl mx-auto px-[clamp(1rem,3vw,2.5rem)] py-[clamp(1.5rem,4vw,3rem)]">
-			<h3 class="font-bold mb-[clamp(1rem,2vw,1.75rem)] text-[clamp(1.4rem,1.2rem+1vw,2rem)]">
-				Popular Books
-			</h3>
-			<div class="mask">
-				<div class="absolute left-20 max-xl:left-15 max-lg:left-10 top-1/2 -translate-y-1/2 z-10 max-sm:hidden">
-					<button class="btn-left cursor-pointer">
-						<img class="w-12 max-lg:w-10" src="/assets/images/left-arrow.svg" alt="Scroll Left">
-					</button>
-				</div>
-				<div
-					class="absolute right-20 max-xl:right-15 max-lg:right-10 top-1/2 -translate-y-1/2 z-10 max-sm:hidden">
-					<button class="btn-right cursor-pointer">
-						<img class="w-12 max-lg:w-10" src="/assets/images/right-arrow.svg" alt="Scroll Right"
-							aria-label="Scroll songs right" aria-controls="sad-songs-list">
-					</button>
-				</div>
-
-				<div class="overflow-x-auto scrollbar-hide booksContainer">
-
-					<%- include("partials/book-card.ejs") %>
-					
-				</div>
-			</div>
-		</section>
+		<%- include("partials/book-card.ejs") %>
 	</main>
 
 	<%- include("partials/footer.ejs") %>

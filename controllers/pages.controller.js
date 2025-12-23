@@ -1,26 +1,20 @@
 import Book from "../models/book.js";
 
-export const renderHome = async (req,res) => {
+export const renderHome = async (req, res) => {
     try {
-        const books = await Book.find({});
-        res.render("index", {books});
+        const fiction = await Book.find({genre: "fiction"}).limit(15);
+        const fantasy = await Book.find({genre: "fantasy"}).limit(15);
+        const mystery = await Book.find({genre: "mystery"}).limit(15);
+        const romance = await Book.find({genre: "romance"}).limit(15);
+        const genres = [fiction, fantasy, mystery, romance]
+        res.render("index", { genres });
     } catch (error) {
         res.status(500).send("Server error");
     }
 }
-export const renderAbout = async (req,res) => {
-    try {
-        const books = await Book.find({});
-        res.render("about", {books});
-    } catch (error) {
-        res.status(500).send("Server error");
-    }
+export const renderAbout = async (req, res) => {
+    res.render("about");
 }
-export const renderUpload = async (req,res) => {
-    try {
-        const books = await Book.find({});
-        res.render("upload", {books});
-    } catch (error) {
-        res.status(500).send("Server error");
-    }
+export const renderUpload = async (req, res) => {
+    res.render("upload");
 }
