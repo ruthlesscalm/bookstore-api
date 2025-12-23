@@ -113,27 +113,27 @@
                     <label for="title" class="block text-white font-semibold">Book Title *</label>
                     <input type="text" id="title" name="title" required
                         class="w-full px-4 py-3 bg-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 border border-slate-600 hover:border-slate-500 transition-colors"
-                        placeholder="Enter the book title" />
+                        placeholder="Enter the book title" minlength="2" maxlength="150" />
                 </div>
 
                 <div class="flex flex-col gap-2">
                     <label for="author" class="block text-white font-semibold">Author *</label>
                     <input type="text" id="author" name="author" required
                         class="w-full px-4 py-3 bg-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 border border-slate-600 hover:border-slate-500 transition-colors"
-                        placeholder="Enter the author name" />
+                        placeholder="Enter the author name" minlength="2" maxlength="100" />
                 </div>
 
                 <div class="flex flex-col gap-2">
-                    <label for="description" class="block text-white font-semibold">Description *</label>
-                    <textarea id="description" name="description" required rows="4"
+                    <label for="description" class="block text-white font-semibold">Description</label>
+                    <textarea id="description" name="description" rows="4"
                         class="w-full px-4 py-3 bg-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 border border-slate-600 hover:border-slate-500 transition-colors resize-none"
-                        placeholder="Enter a brief description of the book"></textarea>
+                        placeholder="Enter a brief description of the book" maxlength="2000"></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="flex flex-col gap-2">
                         <label for="price" class="block text-white font-semibold">Price (&#8377;) *</label>
-                        <input type="number" id="price" name="price" required min="0" step="0.01"
+                        <input type="number" id="price" name="price" required min="0" step="0.01" max="100000"
                             class="w-full px-4 py-3 bg-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 border border-slate-600 hover:border-slate-500 transition-colors"
                             placeholder="0.00" />
                     </div>
