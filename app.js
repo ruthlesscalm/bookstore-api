@@ -2,7 +2,7 @@ import "dotenv/config";
 import express from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import pagesRouter from './routes/pages.js';
+import pagesRouter from './routes/pages.routes.js';
 import connectDB from "./database/db.js";
 
 
