@@ -1,7 +1,7 @@
 import "dotenv/config";
 import mongoose from "mongoose";
 import Book from "../models/book.js";
-import books from "../data/books.js"; 
+import books from "../data/books.data.js"; 
 
 const MONGO_URI = process.env.MONGO_URI;
 
