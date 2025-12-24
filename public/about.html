@@ -1,4 +1,16 @@
-<header
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store - About</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen text-white flex flex-col m-0">
+    
+    <header
 		class="bg-slate-800 border-b-2 border-slate-700 flex justify-between items-center px-[clamp(20px,3vw,50px)] py-[clamp(8px,0.625vw,15px)]">
 		<div class="flex">
 			<h1 class="text-[clamp(1.25rem,1.25rem+1vw,3.5rem)] font-semibold text-orange-500">
@@ -23,11 +35,11 @@
 						class="text-[clamp(0.875rem,0.9375rem+0.3vw,1.5rem)] hover:text-orange-500">Home</a>
 				</li>
 				<li>
-					<a href="/about"
+					<a href="/about.html"
 						class="text-[clamp(0.875rem,0.9375rem+0.3vw,1.5rem)] hover:text-orange-500">About</a>
 				</li>
 				<li>
-					<a href="/upload"
+					<a href="/upload.html"
 						class="text-[clamp(0.875rem,0.9375rem+0.3vw,1.5rem)] hover:text-orange-500">Upload</a>
 				</li>
 				<li>
@@ -77,11 +89,11 @@
 							class="text-[clamp(0.875rem,0.9375rem+0.3vw,1.5rem)] hover:text-orange-500">Home</a>
 					</li>
 					<li>
-						<a href="/about"
+						<a href="/about.html"
 							class="text-[clamp(0.875rem,0.9375rem+0.3vw,1.5rem)] hover:text-orange-500">About</a>
 					</li>
 					<li>
-						<a href="/upload"
+						<a href="/upload.html"
 							class="text-[clamp(0.875rem,0.9375rem+0.3vw,1.5rem)] hover:text-orange-500">Upload</a>
 					</li>
 					<li>
@@ -95,4 +107,24 @@
 		</div>
 	</div>
 
-	<script src="/js/header.js" defer></script>
+    <main class="grow">
+        <section id="about" class="max-w-5xl w-[90%] mx-auto px-4 py-16 mt-16 border-slate-700">
+            <h2 class="text-3xl font-bold mb-4">About BookStore</h2>
+            <p class="text-slate-400 text-lg leading-relaxed max-w-2xl">
+                Welcome to BookStore, your gateway to endless literary adventures. We bring you a carefully curated
+                collection of books across all genres, from timeless classics to contemporary bestsellers. Join our
+                community of book lovers and discover your next favorite read.
+            </p>
+        </section>
+    </main>
+
+   <footer class="border-t border-slate-700 mt-16 py-8 text-center text-slate-500">
+    <p class="text-[clamp(0.875rem,0.75rem+0.3vw,1.25rem)]">
+        &copy; 2025 BookStore. All rights reserved.
+    </p>
+</footer>
+
+    <script src="/js/header.js" defer></script>
+</body>
+
+</html>
